@@ -1,8 +1,6 @@
 from collections import UserDict
-from curses import savetty
 from datetime import datetime
 import pickle
-from unittest import result
 
 def input_error(func):
     def wrapper(*args, **kwargs):
