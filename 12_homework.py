@@ -10,7 +10,7 @@ def input_error(func):
             print(f'Unknown command "{error.args[0]}". Try again..')
         except TypeError:
             print(f'Wrong input. Try again..')
-        except FileNotFoundError as error:
+        except (FileNotFoundError, EOFError) as error:
             print(f'File not found: {error.args}')   
     return wrapper
 
