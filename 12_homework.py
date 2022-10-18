@@ -291,10 +291,10 @@ OPERATIONS = {
 
 
 def main():
-    # loading_data = addressbook.load_data()
-    # if loading_data:
-    #     for key, value in loading_data.items():
-    #         addressbook.data[key] = value
+    loading_data = addressbook.load_data()
+    if loading_data:
+        for key, value in loading_data.items():
+            addressbook.data[key] = value
     
     while True:
         user_input = get_user_input()
