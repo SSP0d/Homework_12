@@ -65,9 +65,10 @@ class Record:
     @input_error
     def add_phone(self, new_phone):
         if not Phone.phone_validation(new_phone):
-            add_phone = Phone()
-            add_phone._value = new_phone
-            self.phones.append(add_phone)
+            raise ValueError
+        add_phone = Phone()
+        add_phone.value = new_phone
+        self.phones.append(add_phone)
 
 
     @input_error
@@ -290,10 +291,10 @@ OPERATIONS = {
 
 
 def main():
-    loading_data = addressbook.load_data()
-    if loading_data:
-        for key, value in loading_data.items():
-            addressbook.data[key] = value
+    # loading_data = addressbook.load_data()
+    # if loading_data:
+    #     for key, value in loading_data.items():
+    #         addressbook.data[key] = value
     
     while True:
         user_input = get_user_input()
